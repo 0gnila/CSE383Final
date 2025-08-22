@@ -1,0 +1,73 @@
+.log-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .log-entry {
+    background-color: #ffffff;
+    border-left: 3px solid #007bff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    color: #212121;
+  }
+
+  .log-entry pre {
+    background-color: #f5f5f5;
+    padding: 8px;
+    border-radius: 4px;
+  }
+
+  .timestamp {
+    color: #6c757d;
+    font-size: 0.9em;
+  }
+
+  .function {
+    font-weight: bold;
+    color: #343a40;
+  }
+
+  .request-count {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .error-message {
+    color: #dc3545;
+    padding: 10px;
+    border-left: 3px solid #dc3545;
+    background-color: #f8d7da;
+    margin-top: 15px;
+    border-radius: 4px;
+  }
+
+  .form-inline > * {
+    margin-right: 15px;
+  }
+  
+  .styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.95em;
+  font-family: Arial, sans-serif;
+}
+
+.styled-table thead tr {
+  background-color: #6e00ff;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid #dddddd;
+  padding: 8px 12px;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}

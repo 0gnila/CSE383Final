@@ -1,0 +1,333 @@
+/* NAVBAR STYLING */
+/* Remove the navbar's default margin-bottom and make corners square */ 
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0 !important; /* Force square corners */
+    display: flex !important; 
+    align-items: center !important;
+    border-bottom: none !important; /* Remove the bottom bar */
+    border: none !important; /* Remove ALL borders completely */
+    box-shadow: none !important; /* Remove any shadow that might appear as a line */
+    min-height: 50px !important;
+    padding: 0 !important; /* Remove all padding */
+}
+
+/* Fix the container to use flexbox for better alignment - ONLY IN NAVBAR */
+.navbar .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    border: none !important; /* Remove any borders */
+    padding-left: 0 !important; /* Remove left padding */
+}
+
+/* Fix logo placement and reduce spacing */
+.navbar-header {
+    float: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-right: 0 !important; /* Remove the right margin completely */
+    border: none !important;
+}
+
+/* Ensure the collapse uses proper display */
+.navbar-collapse {
+    display: inline-flex !important;
+    float: none !important;
+    border: none !important; /* Remove any borders */
+    box-shadow: none !important; /* Remove any shadow */
+    margin-left: 0 !important; /* Remove left margin */
+    padding-left: 0 !important; /* Remove left padding */
+    margin-bottom: 0 !important;
+}
+
+/* Style the navbar items */
+.navbar-nav {
+    float: none !important;
+    display: flex !important;
+    margin: 0 !important;
+    border: none !important;
+    margin-bottom: 0 !important;
+    height: 100% !important;
+}
+
+/* Remove any bottom spacing/borders from navbar elements */
+.navbar-inverse, .navbar-inverse .navbar-nav, .navbar-inverse .navbar-nav > li, .navbar-inverse .navbar-nav > li > a {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+.navbar-nav > li > a {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    height: 100% !important;
+}
+
+.navbar-nav > li {
+    height: 100% !important;
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.navbar-inverse .navbar-nav > .active {
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #6e00ff !important; /* Apply color to the li element too */
+}
+
+
+/* Ensure active button has no extra spacing */
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #6e00ff !important;
+    color: white !important;
+    height: 100% !important;
+    margin: 0 !important;
+    border: 0 !important;
+    box-sizing: border-box !important;
+    /* Make sure padding is consistent and covers full height */
+    padding: 15px !important;
+}
+
+
+/* Make sure the logo displays properly with less spacing */
+.navbar-logo {
+    height: 50px;
+    width: auto;
+    padding: 5px 10px 5px 5px !important;
+    display: inline-block !important;
+    margin-right: 0 !important; /* No right margin */
+}
+
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    min-height: calc(100vh - 130px); /* Adjust based on navbar and footer height */
+}
+
+.sidenav {
+    background: none !important;
+}
+
+.col-sm-1.sidenav {
+    padding-top: 20px;
+    background: transparent !important;
+    height: calc(100vh - 110px);
+}
+
+.col-sm-10 {
+    background-color: #262624;
+    height: calc(100vh - 110px);
+}
+
+.pad-row {
+    margin-top: 40px;
+}
+
+.link {
+    color: white;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+/* Base style for sidenav links */
+.col-sm-1.sidenav .link,
+.col-sm-1.sidenav p a.link {
+    color: white;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+/* Hover style for sidenav links */
+.col-sm-1.sidenav .link:hover,
+.col-sm-1.sidenav p a.link:hover {
+    color: gray !important;
+    text-decoration: underline !important;
+}
+
+/* Visited style for sidenav links - reset to original color after click */
+.col-sm-1.sidenav .link:visited,
+.col-sm-1.sidenav p a.link:visited {
+    color: white;
+}
+
+/* Make sure hover still works even after the link is visited */
+.col-sm-1.sidenav .link:visited:hover,
+.col-sm-1.sidenav p a.link:visited:hover {
+    color: gray !important;
+}
+
+.active {
+    color: #6e00ff !important;
+    min-height: 100% !important;
+}
+
+/* Fixed footer styling */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+/* Add margin to prevent content from being hidden behind fixed footer */
+body {
+    margin-bottom: 50px; /* Adjust based on footer height */
+    background: linear-gradient(135deg, #6e00ff 0%, #000000 100%) !important;
+    color: white;
+}
+
+img {
+    max-width: auto;
+    max-height: 500px !important;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    /* Core Bootstrap mobile navbar reset */
+    .navbar-header {
+        float: none !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        min-height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    /* Position hamburger button on the right */
+    .navbar-toggle {
+        display: block !important;
+        margin-top: 17px !important;
+        margin-bottom: 8px !important;
+        margin-right: 15px !important;
+        float: right !important;
+        position: absolute !important;
+        right: 0 !important;
+        /* top: 8px !important; */
+    }
+    
+    /* Position logo on left with proper spacing */
+    .navbar-logo {
+        height: 40px !important;
+        margin: 15px !important;
+        margin-left: 15px !important;
+    }
+    
+    /* Make dropdown menu overlay content */
+    .navbar-collapse {
+        border-top: none !important;
+        box-shadow: none !important;
+        position: absolute !important;
+        width: 100% !important;
+        background-color: #222 !important;
+        z-index: 1000 !important;
+        top: 50px !important;
+        left: 0 !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+        border-top: 1px solid #333 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    
+    .navbar-nav {
+        float: none !important;
+        margin: 0 !important;
+    }
+    
+    .navbar-nav > li {
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 45px !important; /* Set a consistent height */
+        border-bottom: 1px solid #333 !important; /* Optional divider */
+    }
+    
+    /* Now fix our specific styles */
+    .navbar-inverse .navbar-nav > .active > a,
+    .navbar-inverse .navbar-nav > .active > a:hover,
+    .navbar-inverse .navbar-nav > .active > a:focus {
+        background-color: #6e00ff !important;
+        color: white !important;
+        width: 100% !important;
+    }
+    
+    /* Ensure navbar items take full width */
+    .navbar-nav > li > a {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    
+    /* Clean up navbar container */
+    .navbar .container-fluid {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    
+    /* Remove unnecessary styles that might be causing issues */
+    .navbar, .navbar-inverse, .navbar-header, .navbar-collapse, .navbar-nav {
+        display: block !important;
+        border: none !important;
+    }
+    
+    /* Fix sidenav height and padding */
+    .sidenav {
+        height: auto !important;
+        padding: 0px !important;
+        background-color: #262624 !important; /* Match the main content background */
+    }
+    
+    /* Fix row content height */
+    .row.content {
+        height: auto !important;
+    }
+    
+    /* Reset fixed height for main content area */
+    .col-sm-10 {
+        height: auto !important;
+    }
+
+    .my-custom-sidebar {
+        padding-top: 20px !important;
+    }
+
+    .right-side {
+        background-color: white !important;
+    }
+
+    .pad-row {
+        margin-top: 0px !important;
+    }
+    
+    /* Remove background gradient on mobile */
+    body {
+        margin-bottom: 50px;
+        background: #262624 !important; /* Override the gradient with solid color */
+    }
+    
+    /* Fix footer */
+    footer {
+        background-color: #555;
+    }
+    
+    /* Ensure the placeholder image doesn't stretch too much */
+    img {
+        max-height: 300px !important;
+        margin: 20px auto !important;
+        padding-bottom: 20px !important;
+    }
+}

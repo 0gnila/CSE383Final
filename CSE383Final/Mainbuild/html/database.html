@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vanna Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link href="chatStyle.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img src="images/Miami_Redhawks_logo.png" alt="Logo for Miami University" class="navbar-logo">
+    </div>
+    <!-- Collapsable part of the navbar, allowing use for mobile -->
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="grant.html">Grant</a></li>
+        <li><a href="cole.html">Cole</a></li>
+        <li class="active"><a href="database.html">Database Query</a></li>
+        <li><a href="logs.html">Logs</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- App layout -->
+<div class="container-fluid app-container">
+  <div id="chatContainer" class="chat-container"></div>
+
+  <!-- Chat input -->
+  <form id="queryForm" class="chat-input">
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        id="userQuery"
+        placeholder="Type your message…"
+        autocomplete="off"
+      >
+      <span class="input-group-btn">
+        <button class="btn btn-purple" type="submit">Send</button>
+      </span>
+    </div>
+  </form>
+
+  <!-- Logs button (styled like a chat action) -->
+  <div class="text-center" style="margin-top: 20px;">
+    <button class="btn btn-info" id="loadLogsBtn">🗂 Load Recent Logs</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Grant Bischoff and Cole Lingo</p>
+</footer>
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="js/vanna.js"></script>
+</body>
+</html>

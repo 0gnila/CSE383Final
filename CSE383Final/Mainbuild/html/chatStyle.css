@@ -1,0 +1,382 @@
+/* Full height layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Use flex column for whole page */
+body {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #6e00ff 0%, #000000 100%);
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
+  color: #eee;
+}
+
+.app-container {
+  width: 80%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;  /* Same as navbar height */
+  padding-bottom: 120px; /* For chat input + footer */
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Chat scroll area */
+.chat-container {
+  position: absolute;
+  flex: 1;
+  top: 70px;
+  bottom: 120px;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 12px 12px 0 0;
+  z-index: 1;
+}
+
+/* Chat input form - fixed above footer */
+.chat-input {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 100vw;
+  padding: 10px 15px;
+  background-color: #fff;
+  z-index: 1;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.result-table th,
+.result-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.result-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Center and size input group */
+.chat-input .input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 70%;
+  max-width: 70%;
+  margin: 0 auto;
+  gap: 8px;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+
+/* Ensure input control doesn’t overflow */
+.chat-input .form-control {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chat-input .btn {
+  white-space: nowrap;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Message formatting */
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.message-wrapper.user {
+  align-items: flex-end;
+}
+
+.chat-message {
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 80%;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  width: auto;
+}
+
+.chat-message.bot {
+  background: #E5E5EA;
+  color: #000;
+  align-self: flex-start;
+  border-top-left-radius: 4px;
+}
+
+.chat-message.user {
+  background: #6e00ff;
+  color: #fff;
+  align-self: flex-end;
+  border-top-right-radius: 4px;
+}
+
+/* Sender label alignment */
+.sender-label {
+  font-size: 0.75em;
+  color: #666;
+  margin-bottom: 2px;
+  width: 100%;
+}
+
+.sender-label.user {
+  text-align: right;
+}
+
+.sender-label.bot {
+  text-align: left;
+}
+
+/* Timestamp alignment */
+.timestamp {
+  font-size: 0.7em;
+  color: #999;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.timestamp.user {
+  text-align: right;
+}
+
+.timestamp.bot {
+  text-align: left;
+}
+
+/* Result table styles */
+.result-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.result-table th,
+.result-table td {
+  border: 1px solid #999;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.result-table th {
+  background-color: #444;
+  color: white;
+}
+
+/* SQL toggle */
+.collapsible-sql button.sql-toggle {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.collapsible-sql pre.sql-body {
+  background-color: #222;
+  color: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+/* NAVBAR STYLING */
+/* Remove the navbar's default margin-bottom and make corners square */ 
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0 !important; /* Force square corners */
+  display: flex !important; 
+  align-items: center !important;
+  border-bottom: none !important; /* Remove the bottom bar */
+  border: none !important; /* Remove ALL borders completely */
+  box-shadow: none !important; /* Remove any shadow that might appear as a line */
+  min-height: 50px !important;
+  padding: 0 !important; /* Remove all padding */
+}
+
+/* Fix the container to use flexbox for better alignment - ONLY IN NAVBAR */
+.navbar .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+  border: none !important; /* Remove any borders */
+  padding-left: 0 !important; /* Remove left padding */
+}
+
+/* Fix logo placement and reduce spacing */
+.navbar-header {
+  float: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 0 !important; /* Remove the right margin completely */
+  border: none !important;
+}
+
+/* Ensure the collapse uses proper display */
+.navbar-collapse {
+  display: inline-flex !important;
+  float: none !important;
+  border: none !important; /* Remove any borders */
+  box-shadow: none !important; /* Remove any shadow */
+  margin-left: 0 !important; /* Remove left margin */
+  padding-left: 0 !important; /* Remove left padding */
+  margin-bottom: 0 !important;
+}
+
+/* Style the navbar items */
+.navbar-nav {
+  float: none !important;
+  display: flex !important;
+  margin: 0 !important;
+  border: none !important;
+  margin-bottom: 0 !important;
+  height: 100% !important;
+}
+
+/* Remove any bottom spacing/borders from navbar elements */
+.navbar-inverse, .navbar-inverse .navbar-nav, .navbar-inverse .navbar-nav > li, .navbar-inverse .navbar-nav > li > a {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+.navbar-nav > li > a {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  height: 100% !important;
+}
+
+.navbar-nav > li {
+  height: 100% !important;
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.navbar-inverse .navbar-nav > .active {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #6e00ff !important; /* Apply color to the li element too */
+}
+
+
+/* Ensure active button has no extra spacing */
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #6e00ff !important;
+  color: white !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+  box-sizing: border-box !important;
+  /* Make sure padding is consistent and covers full height */
+  padding: 15px !important;
+}
+
+
+/* Make sure the logo displays properly with less spacing */
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  padding: 5px 10px 5px 5px !important;
+  display: inline-block !important;
+  margin-right: 0 !important; /* No right margin */
+}
+
+.btn-purple {
+  background-color: #6e00ff !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 16px  !important;
+  max-width: 100px;
+  width: auto;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-align: center;
+  
+}
+
+.btn-purple:hover,
+.btn-purple:focus {
+  background-color: #5a00d1 !important;
+  color: white !important;
+}
+
+/* Sticky footer */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 600px) {
+  .chat-message {
+    max-width: 95%;
+    font-size: 1em;
+  }chow 
+
+  .chat-input {
+    padding: 8px 12px;
+  }
+
+  .chat-input .input-group {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .chat-input .input-group-btn {
+    flex-shrink: 0;
+  }
+
+  .chat-input .form-control {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .navbar-logo {
+    height: 40px;
+    padding: 3px;
+  }
+}

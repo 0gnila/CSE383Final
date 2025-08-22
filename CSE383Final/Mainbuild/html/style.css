@@ -1,0 +1,217 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px;
+  background: linear-gradient(135deg, #6e00ff 0%, #000000 100%);
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #000000;
+}
+
+  /* Layout */
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* .container-fluid {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+} */
+
+.row.content {
+  width: 100%;
+}
+
+.project-description {
+  background-color: #ffffff;
+  color: #000000 !important;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.project-description * {
+  color: #000 !important;
+}
+.project-description p {
+  margin-top: 40px;
+}
+
+.btn-primary{
+  color:#fff !important;
+  margin-bottom: 40px;
+}
+
+/* Navbar */
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+/* NAVBAR STYLING */
+/* Remove the navbar's default margin-bottom and make corners square */ 
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0 !important; /* Force square corners */
+  display: flex !important; 
+  align-items: center !important;
+  border-bottom: none !important; /* Remove the bottom bar */
+  border: none !important; /* Remove ALL borders completely */
+  box-shadow: none !important; /* Remove any shadow that might appear as a line */
+  min-height: auto !important; /* Remove the minimum height */
+}
+
+/* Fix the container to use flexbox for better alignment - ONLY IN NAVBAR */
+.navbar .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+  border: none !important; /* Remove any borders */
+  padding-left: 0 !important; /* Remove left padding */
+}
+
+/* Fix logo placement and reduce spacing */
+.navbar-header {
+  float: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 0 !important; /* Remove the right margin completely */
+  border: none !important;
+}
+
+/* Ensure the collapse uses proper display */
+.navbar-collapse {
+  display: inline-flex !important;
+  float: none !important;
+  border: none !important; /* Remove any borders */
+  box-shadow: none !important; /* Remove any shadow */
+  margin-left: 0 !important; /* Remove left margin */
+  padding-left: 0 !important; /* Remove left padding */
+  margin-bottom: 0 !important;
+}
+
+/* Style the navbar items */
+.navbar-nav {
+  float: none !important;
+  display: flex !important;
+  margin: 0 !important;
+  border: none !important;
+  margin-bottom: 0 !important;
+}
+
+/* Remove any bottom spacing/borders from navbar elements */
+.navbar-inverse, .navbar-inverse .navbar-nav, .navbar-inverse .navbar-nav > li, .navbar-inverse .navbar-nav > li > a {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+/* Ensure active button has no extra spacing */
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #6e00ff !important;
+  color: white !important;
+  align-items: center !important;
+  display: flex !important;
+  border: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 15px !important; /* Match the navbar padding exactly */
+}
+
+/* Make sure the logo displays properly with less spacing */
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  padding: 5px 10px 5px 5px !important;
+  display: inline-block !important;
+  margin-right: 0 !important; /* No right margin */
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 30px 20px;
+}
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+.btn-primary {
+  background-color: #6e00ff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #5200cc;
+}
+
+/* Footer */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.api-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: #6e00ff;
+  width: 18rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  color: #fff !important;
+}
+
+.card * {
+  color: #fff !important;
+}
+
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-text {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
